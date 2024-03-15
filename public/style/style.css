@@ -1,0 +1,9 @@
+/* body{
+    background-color: purple;
+} */
+
+.head{
+    display: flex;
+    width: 50px;
+    margin: auto;
+}
