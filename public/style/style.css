@@ -34,7 +34,7 @@ body{
     transition: 0.5s;
 }
 
-.blogs:hover{
+.hover:hover{
     transform: scale(1.10);
 }
 
@@ -49,4 +49,18 @@ body{
 
 .btn:active{
     background: linear-gradient(171deg, #346f78, white);
+}
+
+.dot{
+    font-weight: bold;
+}
+
+.none{
+    display: none;
+}
+
+.zoom{
+    display: block;
+    width: fit-content;
+    height: fit-content;
 }
