@@ -31,9 +31,11 @@ body{
     text-align: center;
     box-sizing: border-box;
     padding-bottom: 40px;
-    transition: 0.5s;
 }
+.hover{
+    transition: 0.5s;
 
+}
 .hover:hover{
     transform: scale(1.10);
 }
@@ -63,4 +65,16 @@ body{
     display: block;
     width: fit-content;
     height: fit-content;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 100px auto;
+}
+input{
+    margin: 10px;
+    width: 650px;
+    height: 30px;
 }

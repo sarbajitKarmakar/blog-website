@@ -1,25 +1,21 @@
 <%- include("partials/header.ejs") %>
-<div class="head">This is a blog Website</div>
-<div class="postSection">
-    <a href="/form"><button class="btn">Create new Post</button></a>
-</div>
-<div class="content">
-    <div class="blogs">
-        <h1 class="blogh"></h1>
-        <p class="para"></p>
+    <div class="head">This is a blog Website</div>
+    <div class="postSection">
+        <a href="/form"><button class="btn">Create new Post</button></a>
     </div>
-    <div class="blogs"></div>
-    <div class="blogs"></div>
-    <div class="blogs"></div>
-    <div class="blogs"></div>
-    <div class="blogs"></div>
-</div>
+    
+    
+    
+    <div class="content">
+        <% if(locals.objLength>0){ %>
+            <% for (const key in obj) {%>
+                <div class="blogs hover">
+                    <h1 class="blogh"><%= obj[key].head %></h1>
+                    <p class="para"><%= obj[key].comment %></p>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
 
-<% if (locals.obj) {%>
-    <%= "true" %>
-<%}else{ %>
-    <%= "false" %>
-<% } %>
-
-<script src="js/script.js"></script>
-<%- include("partials/footer.ejs") %>
+    <script src="js/script.js"></script>
+    <%- include("partials/footer.ejs") %>

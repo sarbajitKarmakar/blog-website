@@ -8,21 +8,19 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 const __dirname = dirname(fileURLToPath(import.meta.url));
-let obj;
+let obj = {} ;  //to store the blogs
+
 
 app.use(bodyParser.urlencoded({extended: true}));
-
-if (obj) {
-    console.log("true");
-}else{
-    console.log("False");
-}
 
 
 app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
-    res.render(__dirname+"/views/index.ejs");
+    
+    console.log(obj); 
+    const objLength = Object.keys(obj).length; // getting the obj length
+    res.render(__dirname+"/views/index.ejs",{obj,objLength}); //sent the obj and obj length
 })
 
 app.get("/form",(req,res)=>{
@@ -30,12 +28,13 @@ app.get("/form",(req,res)=>{
 })
 
 app.post("/submit",(req,res)=>{
-    const newObj = {
-        head: res.body['heading'],
-        comment: res.body['comment']
+    const newObj = { //store the values
+        head: req.body['heading'],
+        comment: req.body['comment']
     }
-    obj[res.body['name']] = newObj;
-    res.render(__dirname+"/views/index.ejs");
+    obj[req.body['name']] = newObj;
+    res.redirect("/");
+
 });
 
 app.listen(port,()=>{
