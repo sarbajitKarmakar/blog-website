@@ -12,6 +12,9 @@
                 <div class="blogs hover">
                     <h1 class="blogh"><%= obj[key].head %></h1>
                     <p class="para"><%= obj[key].comment %></p>
+                    <br>
+                    <br>
+                    <a href="/delete/<%= key %>">Delete</a>
                 </div>
             <% } %>
         <% } %>
