@@ -37,6 +37,13 @@ app.post("/submit",(req,res)=>{
 
 });
 
+app.get('/delete/:key', (req, res)=>{
+    const key = req.params.key
+    delete obj[key]
+
+    res.redirect('/')
+})
+
 app.listen(port,()=>{
     console.log("The website is working");
 });
